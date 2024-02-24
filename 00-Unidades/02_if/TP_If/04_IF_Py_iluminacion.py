@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Valeria Andreina
+apellido: Gonzalez Perez
 ---
 TP: IF_Iluminacion
 ---
@@ -43,7 +43,62 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca_comercial = (self.combobox_marca.get())
+        cantidad = int(self.combobox_cantidad.get())
+        total = 800*cantidad
+        
+        if cantidad > 5:
+            total_descuento = 400*cantidad
+            total_descuento = str(total_descuento)
+            total = str(total)
+            alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+        
+        if cantidad == 5:
+            if marca_comercial == "ArgentinaLuz":
+                total_descuento = 0.6*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+            else:
+                total_descuento = 0.7*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+                
+        if cantidad == 4 :
+            if marca_comercial == "ArgentinaLuz" or marca_comercial == "FelipeLamparas":
+                total_descuento = 0.75*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento+ " pesos")
+            else:
+                total_descuento = 0.8*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+       
+        if cantidad == 3:
+            if marca_comercial == "ArgentinaLuz":
+                total_descuento = 0.85*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+            if marca_comercial == "FelipeLamparas" :
+                total_descuento = 0.9*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + " pesos")
+            if marca_comercial != "FelipeLamparas" and marca_comercial != "ArgentinaLuz":
+                total_descuento = 0.95*total
+                total_descuento = str(total_descuento)
+                total = str(total)
+                alert("Factura de compra", "Su total es de: " + total + " pesos;   aplicando el descuento tiene un neto a pagar de: " + total_descuento + "pesos")
+                
+        if cantidad < 3:
+                total = str(total)
+                alert("Factura de compra", "Su total a pagar es de: " + total + " pesos")
+                
+
         
     
 if __name__ == "__main__":
