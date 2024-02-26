@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Valeria Andreina
+apellido: Gonzalez Perez
 ---
 Ejercicio: Match_09
 ---
@@ -57,7 +57,55 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estacion = (self.combobox_estaciones.get())
+        destino = (self.combobox_destino.get())
+        match estacion :
+            case "Invierno":
+                match destino :
+                    case "Bariloche" :
+                        estadia = 15000*1.2
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Cataratas" | "Cordoba" :
+                        estadia = 15000*0.9
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Mar del plata" :
+                        estadia = 15000*0.8
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+            case "Verano":
+                match destino :
+                    case "Bariloche" :
+                        estadia = 15000*0.8
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Cataratas" | "Cordoba" :
+                        estadia = 15000*1.1
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Mar del plata" :
+                        estadia = 15000*1.2
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+            case "Primavera" | "Otoño":
+                match destino :
+                    case "Bariloche" :
+                        estadia = 15000*1.1
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Cataratas" :
+                        estadia = 15000*1.1
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Mar del plata" :
+                        estadia = 15000*1.1
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
+                    case "Cordoba" :
+                        estadia = 15000
+                        estadia = str(estadia)
+                        alert("Costo de estadia","Costo de su estadia " + estadia + " pesos")
             
     
 if __name__ == "__main__":
