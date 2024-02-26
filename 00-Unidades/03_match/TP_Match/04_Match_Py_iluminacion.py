@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Valeria Andreina
+apellido: Gonzalez Perez
 ---
 TP: Iluminación
 ---
@@ -43,7 +43,55 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = (self.combobox_marca.get())
+        cantidad = int(self.combobox_cantidad.get())
+        match cantidad :
+            case 6 | 7 | 8 | 9 | 10 | 11 | 12 :
+                costo = 400*cantidad
+                if costo > 3999 :
+                    costo = costo*0.95
+                costo = str(costo)
+                alert("Factura","Monto total a pagar: "+ costo + " pesos")
+            case 5 :
+                match marca :
+                    case "ArgentinaLuz" :
+                        costo = 800*cantidad*0.6
+                        costo = str(costo)
+                        alert("Factura","Monto toal a pagar: "+ costo + " pesos") 
+                    case _ :
+                        costo = 800*cantidad*0.7
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: "+ costo+ " pesos")
+            case 4 :
+                match marca :
+                    case "ArgentinaLuz" | "FelipeLamparas" :
+                        costo = 800*cantidad*0.75
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: "+ costo + " pesos")
+                    case _ :
+                        costo = 800*cantidad*0.8
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: " + costo + " pesos")
+            case 3 :
+                match marca :
+                    case "ArgentinaLuz" :
+                        costo = 800*cantidad*0.85
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: "+ costo + " pesos")
+                    case "FelipeLamparas" :
+                        costo = 800*cantidad*0.9
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: " + costo + " pesos")
+                    case _ :
+                        costo = 800*cantidad*0.95
+                        costo = str(costo)
+                        alert("Factura","Monto total a pagar: " + costo + " pesos")
+            case 2 | 1 :
+                costo = 800*cantidad
+                costo = str(costo)
+                alert("Factura","Monto total a pagar: "+costo+" pesos")
+                    
+
         
     
 if __name__ == "__main__":
