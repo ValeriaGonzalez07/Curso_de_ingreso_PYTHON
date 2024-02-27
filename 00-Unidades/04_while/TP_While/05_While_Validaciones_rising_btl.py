@@ -55,7 +55,30 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        apellido = (self.txt_apellido.get())
+        edad = int(self.txt_edad.get())
+        if edad < 18 or edad > 90 :
+            condicional1 = 0
+            while condicional1 == 0 :
+                self.txt_edad.delete(0,"end")
+                alert("DATO INCORRECTO","El valor de la edad debe estar entre 18 y 90 ambos inclusive")
+                edad= int(self.txt_edad.get())
+                if edad >17 and edad < 91 :
+                    condicional1 = 1
+        civil = (self.combobox_tipo.get())
+        legajo1 = int(self.txt_legajo.get())
+        legajo2 = legajo1//1000
+
+        if legajo1 > 9999 or legajo2 == 0 :
+            condicional2 =0
+            while condicional2 == 0 :
+                self.txt_legajo.delete(0,"end")
+                alert("DATO INCORRECTO","El valor del legajo debe ser mayor que 999 y menor que 10000")
+                legajo1= int(self.txt_legajo.get())
+                legajo2 =legajo1//1000
+                if legajo1 >999 and legajo1 < 10000 :
+                    condicional2 = 1
+        
 
 
 if __name__ == "__main__":
