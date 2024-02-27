@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Valeria Andreina
+apellido: Gonzalez Perez
 ---
 Ejercicio: while_05
 ---
@@ -30,9 +30,16 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_letra_on_click(self):
-        pass
-            
-    
+        condicion = 0 
+        while condicion == 0 :
+            mayuscula = prompt("Letras mayusculas", "Introduzca 'U' , 'T' o 'N'")
+            if mayuscula == "U" :
+                condicion = 1
+            if mayuscula == "N" :
+                condicion = 1
+            if mayuscula == "T" :
+                condicion = 1
+ 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
